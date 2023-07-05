@@ -7,12 +7,12 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function show()
+    public function getUser()
     {
         $user = Auth::user();
         return response()->json([
             'user' => $user,
-            'access_token' => $token,
+            //'access_token' => $token,
         ], 200);
     }
 }
