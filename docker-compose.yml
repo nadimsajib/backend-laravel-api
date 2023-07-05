@@ -16,6 +16,15 @@ services:
     networks:
       - innos
 
+  react:
+    build:
+      context: ./react-news-app # Path to the React frontend app
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000' # Map the React app to port 3000 on the host machine
+    volumes:
+      - ./react:/app # Mount the React app directory
+
   db:
     image: mysql:8.0
     container_name: innos-db
